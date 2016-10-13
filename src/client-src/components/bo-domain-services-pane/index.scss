@@ -1,0 +1,42 @@
+.bo-domain-services-pane {
+
+  min-width: 1000px;
+  .actions-wrapper {
+    height: 32px;
+    position: relative;
+
+    .domain-get-button,
+    .domain-transfer-get-button,
+    .registry-check-button,
+    .premium-domain-data-button {
+      margin-left: 20px;
+      height: 100%;
+    }
+
+    .domain-name-input {
+      width: 120px;
+      height: 100%;
+      padding-left: 10px;
+      box-sizing: border-box;
+    }
+
+  }
+
+  .results-container {
+    margin-top: 40px;
+  }
+
+  .json-result-container *,
+  .no-json-data * {
+    font-size: 16px;
+  }
+
+
+
+  .json-result-container {
+    animation: animated-bottom-to-top 1s;
+  }
+
+}
+
+

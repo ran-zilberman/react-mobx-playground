@@ -1,0 +1,64 @@
+@import "../../../node_modules/wix-base-ui/src/framework/colors";
+@import "../../../node_modules/wix-base-ui/src/framework/fonts";
+@import "../../../node_modules/react-json-inspector/json-inspector";
+@import "../../../node_modules/wix-base-ui/src/controls/button";
+@import "../../../node_modules/wix-base-ui/src/controls/textInput";
+
+// ============================================================================
+// Common Classes
+// ============================================================================
+
+body {
+  height: 100%;
+  background-color: $g-color-b5x;
+}
+
+.loader {
+  border: 4px solid #fff;
+  border-left: 4px solid rgba(56,153,236,0.5);
+  border-top: 4px solid rgba(56,153,236,0.5);
+  transform: translateZ(0);
+  animation: load8 .8s infinite linear;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -35px;
+  margin-left: -35px;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+
+// ============================================================================
+// Animations
+// ============================================================================
+
+@keyframes animated-rtl-entrance {
+  0% { opacity: 0; transform: translateX(100%);}
+  100% { opacity: 1; }
+}
+
+@keyframes animated-bottom-to-top {
+  0% { opacity: 0; transform: translateY(100%);}
+  100% { opacity: 1; }
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  font-family: $g-font45;
+}
