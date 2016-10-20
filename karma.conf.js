@@ -31,6 +31,11 @@ module.exports = function (config) {
       resolve: {
         extensions: ['', '.js', '.jsx']
       },
+      plugins: [
+        new ExtractTextPlugin('style.css', {
+          allChunks: true
+        })
+      ],
       externals: {
         'cheerio': 'window',
         'jsdom': 'window',

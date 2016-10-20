@@ -16,7 +16,7 @@ class BoDomainServicesPane extends Component {
   }
 
   render() {
-    let { jsonTree, isLoading } = this.props;
+    let { jsonData, isLoading } = this.props;
     return (<div className="bo-domain-services-pane">
       <div className="actions-wrapper">
         <input ref="domainName" className="domain-name-input"/>
@@ -30,7 +30,7 @@ class BoDomainServicesPane extends Component {
           <div className="loader"/>
         :
         <div className="results-container">
-          { jsonTree ? <JSONInspector className="json-result-container" isExpanded={ returnTrue } data={jsonTree}  filterOptions={{ignoreCase: true}} /> : <div className="no-json-data">No data</div> }
+          { jsonData ? <JSONInspector className="json-result-container" isExpanded={ returnTrue } data={jsonData}  filterOptions={{ignoreCase: true}} /> : <div className="no-json-data">No data</div> }
         </div>
       }
     </div>);
@@ -39,25 +39,25 @@ class BoDomainServicesPane extends Component {
   _onDomainGetClick() {
     let {onDomainGetClick} = this.props;
     let domainName = this.refs.domainName.value;
-    onDomainGetClick({domainName});
+    onDomainGetClick(domainName);
   }
 
   _onDomainTransferGetClick() {
     let {onDomainTransferGetClick} = this.props;
     let domainName = this.refs.domainName.value;
-    onDomainTransferGetClick({domainName});
+    onDomainTransferGetClick(domainName);
   }
 
   _onRegistryCheckClick() {
     let {onRegistryCheckClick} = this.props;
     let domainName = this.refs.domainName.value;
-    onRegistryCheckClick({domainName});
+    onRegistryCheckClick(domainName);
   }
 
   _onPremiumDomainDataClick() {
     let {onPremiumDomainDataClick} = this.props;
     let domainName = this.refs.domainName.value;
-    onPremiumDomainDataClick({domainName});
+    onPremiumDomainDataClick(domainName);
   }
 
 }
@@ -69,7 +69,7 @@ BoDomainServicesPane.propTypes = {
   onDomainTransferGetClick: PropTypes.func.isRequired,
   onRegistryCheckClick: PropTypes.func.isRequired,
   onPremiumDomainDataClick: PropTypes.func.isRequired,
-  jsonTree: PropTypes.object
+  jsonData: PropTypes.object
 };
 
 

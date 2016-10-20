@@ -1,10 +1,13 @@
 import React from 'react'
-import BoDomainServicesPaneContainer from '../containers/bo-domain-services-pane-container'
+import BoDomainServicesPaneContainer from '../containers/BoDomainServicesPaneContainer';
+import DevTools from 'mobx-react-devtools';
 require('./index.scss');
 
-
 const App = () => (
-  <BoDomainServicesPaneContainer/>
+  <div>
+    <DevTools/>
+    <BoDomainServicesPaneContainer/>
+  </div>
 );
 
 export default App;

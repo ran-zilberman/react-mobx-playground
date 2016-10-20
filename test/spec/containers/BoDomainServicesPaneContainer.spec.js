@@ -1,10 +1,8 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { Provider } from 'react-redux';
-import BoDomainServicesPaneContainer from '../../../src/client-src/containers/bo-domain-services-pane-container';
-import configureStore from '../../../src/client-src/store/configure-store.js';
-import rootSaga from '../../../src/client-src/sagas';
-// import 'isomorphic-fetch';
+import BoDomainServicesPaneContainer from '../../../src/client-src/containers/BoDomainServicesPaneContainer';
+import BoDomainServicesDataManager from '../../../src/client-src/store/BoDomainServicesDataManager';
 import fetchMock from 'fetch-mock';
 import ServerUri from '../../../src/client-src/constants/ServerUri';
 import ContentType from '../../../src/client-src/constants/ContentType';
@@ -48,13 +46,8 @@ describe('<BoDomainServicesPaneContainer/>', () => {
   });
 
   beforeEach(() => {
-    const store = configureStore();
-    store.runSaga(rootSaga);
-
     wrapper = mount(
-      <Provider store={store} >
-        <BoDomainServicesPaneContainer />
-      </Provider>
+      <BoDomainServicesPaneContainer />
     );
   });
 

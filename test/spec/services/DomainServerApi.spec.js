@@ -1,6 +1,6 @@
 import 'isomorphic-fetch';
 import fetchMock from 'fetch-mock';
-import DomainServerApi from '../../../src/client-src/services/domain-server-api'
+import DomainServerApi from '../../../src/client-src/services/DomainServerApi'
 import ContentType from '../../../src/client-src/constants/ContentType'
 import ServerUri from '../../../src/client-src/constants/ServerUri'
 

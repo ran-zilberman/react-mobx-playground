@@ -1,6 +1,6 @@
 import { mount, shallow } from 'enzyme';
 import React from 'react';
-import BoDomainServicesPane from '../../../src/client-src/components/bo-domain-services-pane';
+import BoDomainServicesPane from '../../../src/client-src/components/BoDomainServicesPane';
 
 // ============================================================================
 // Tests
@@ -52,7 +52,7 @@ describe('<BoDomainServicesPane/>', ()=> {
   });
 
   it(`should show the json tree when data exist`, function () {
-    props.jsonTree = {jsonItem: 'json-item'};
+    props.jsonData= {jsonItem: 'json-item'};
     wrapper = mount(<BoDomainServicesPane {...props}/>);
     expect(wrapper.find(jsonResultContainerClassName).length).toBe(1);
   });
